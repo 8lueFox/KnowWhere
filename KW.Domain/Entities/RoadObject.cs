@@ -19,6 +19,17 @@ public class RoadObject : AuditableEntity, IAggregateRoot
         Colour = Colour.From(colour);
     }
 
+    public RoadObject(string name, object colour)
+    {
+        Name = name;
+        //Colour = Colour.From(colour);
+    }
+
+    public RoadObject()
+    {
+
+    }
+
     public RoadObject Update(string? name, string? colour)
     {
         if (name is not null && Name?.Equals(name) is not true) Name = name;

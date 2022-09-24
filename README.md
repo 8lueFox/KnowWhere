@@ -3,5 +3,13 @@
 
 The app where you can mark objects, such as speed cameras or car accidents, on the road. 
 
-## Image descrbing basic plan of app
+## Image describing basic plan of app
 ![alt text](https://github.com/8lueFox/KnowWhere/blob/8lueFox-patch-1/BasicPlan.PNG?raw=true)
+
+## Used Libraries :books:
+
+* [MediatR](https://github.com/jbogard/MediatR) 
+* [FluentValidation](https://github.com/FluentValidation/FluentValidation) 
+* [Ardalis.Specification](https://github.com/ardalis/specification)
+    
+    A simple package with a base Specification class, for use in creating queries that work with Repository types.
