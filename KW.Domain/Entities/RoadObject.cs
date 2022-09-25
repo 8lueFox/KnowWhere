@@ -19,12 +19,6 @@ public class RoadObject : AuditableEntity, IAggregateRoot
         Colour = Colour.From(colour);
     }
 
-    public RoadObject(string name, object colour)
-    {
-        Name = name;
-        //Colour = Colour.From(colour);
-    }
-
     public RoadObject()
     {
 
