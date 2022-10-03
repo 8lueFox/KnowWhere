@@ -1,10 +1,13 @@
+using KW.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace KW.Infrastructure.Persistence.Context;
 
-public abstract class BaseDbContext : DbContext
+public abstract class BaseDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, ApplicationRoleClaim, IdentityUserToken<string>>
 {
-    public BaseDbContext(DbContextOptions options)
+    protected BaseDbContext(DbContextOptions options)
         :base(options)
     { 
     }
