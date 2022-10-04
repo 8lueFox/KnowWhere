@@ -50,7 +50,7 @@ public class UserService : IUserService
 
         //await _userManager.AddToRoleAsync(user, AppRoles.Basic);
 
-        var messages = new List<string> { string.Format("User {0} Registred.", user.UserName) };
+        var messages = new List<string> { string.Format("User {0} Registred.", user.UserName)};
         
         return string.Join(Environment.NewLine, messages);
     }
