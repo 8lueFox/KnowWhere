@@ -40,22 +40,18 @@ public class ApplicationDbContextInitializer
     {
         foreach(string roleName in AppRoles.DefaultRoles)
         {
-            if(await _roleManager.Roles.SingleOrDefaultAsync(r => r.Name == roleName)
+            if (await _roleManager.Roles.SingleOrDefaultAsync(r => r.Name == roleName)
                 is not ApplicationRole role)
             {
                 role = new ApplicationRole(roleName);
-                var result = await _roleManager.CreateAsync(role);
+                await _roleManager.CreateAsync(role);
             }
-
-            var roles2 = await _roleManager.Roles.ToListAsync();
 
             if (roleName == AppRoles.Basic)
                 await AssignPermissionsToRoleAsync(_context, AppPermissions.Basic, role);
             else if(roleName == AppRoles.Admin)
                 await AssignPermissionsToRoleAsync(_context, AppPermissions.Admin, role);
         }
-
-        var roles = await _roleManager.Roles.ToListAsync();
     }
 
     private async Task SeedUsersAsync()
@@ -76,10 +72,6 @@ public class ApplicationDbContextInitializer
         var password = new PasswordHasher<ApplicationUser>();
         adminUser.PasswordHash = password.HashPassword(adminUser, "alaMaKota");
         await _userManager.CreateAsync(adminUser);
-
-        var roles = _roleManager.Roles.ToList();
-        var roles2 = _userManager.SupportsUserRole;
-        var roles3 = _userManager.GetRolesAsync(adminUser);
 
         if (!await _userManager.IsInRoleAsync(adminUser, AppRoles.Admin))
             await _userManager.AddToRoleAsync(adminUser, AppRoles.Admin);

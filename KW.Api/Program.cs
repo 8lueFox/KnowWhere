@@ -11,6 +11,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 if (app.Environment.IsDevelopment())
 {
     using(var scope = app.Services.CreateScope())
