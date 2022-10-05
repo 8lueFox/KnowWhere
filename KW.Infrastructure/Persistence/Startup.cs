@@ -16,6 +16,7 @@ internal static class Startup
         return services
             .AddDbContext<ApplicationDbContext>(options =>
                 options.UseInMemoryDatabase("KnowWhereDB"))
+            .AddScoped<ApplicationDbContextInitializer>()
             .AddRepositories();
     }
 

@@ -8,7 +8,7 @@ public class RoadObjectById : Specification<RoadObject, RoadObjectDto>, ISingleR
     {
         Query.Where(p => p.Id == id);
         Query.AsNoTracking();
-    } //=> Query.AsNoTracking().Where(p => p.Id == id).;
+    }
 }
 
 public class GetBrandRequestHandler : IRequestHandler<GetRoadObjectRequest, RoadObjectDto>

@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FSH.WebApi.Host.Controllers;
+namespace KW.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]

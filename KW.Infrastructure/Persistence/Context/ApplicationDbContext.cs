@@ -11,8 +11,8 @@ public class ApplicationDbContext : BaseDbContext
     {
     }
 
-    public DbSet<RoadObject> Products => Set<RoadObject>();
-    public DbSet<RoadObjectReport> Brands => Set<RoadObjectReport>();
+    public DbSet<RoadObject> RoadObjects => Set<RoadObject>();
+    public DbSet<RoadObjectReport> RoadObjectReports => Set<RoadObjectReport>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

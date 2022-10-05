@@ -1,4 +1,5 @@
-﻿using KW.Infrastructure.Common;
+﻿using KW.Infrastructure.Auth;
+using KW.Infrastructure.Common;
 using KW.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -13,6 +14,7 @@ public static class Startup
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration config)
     {
         return services
+            .AddAuth(config)
             .AddMediatR(Assembly.GetExecutingAssembly())
             .AddPersistence(config)
             .AddServices();
