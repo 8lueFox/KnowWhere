@@ -1,0 +1,13 @@
+﻿//TAKE NOTE
+//This is only example file where I show how to create correct file 
+//You need to create "mail.json" file and there set correctly values
+{
+	"MailSettings": {
+		"DisplayName": "8lueFox",
+		"From": "8luefox@github.com",
+		"Host": "smtp.github.email",
+		"Password": "ReallyStrongPassword",
+		"Port": 999,
+		"UserName": "8lue.fox@github.email"
+	}
+}

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Configurations\mail.example.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Configurations\mail.example.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KW.MailingService.Infrastructure\KW.MailingService.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
