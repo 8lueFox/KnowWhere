@@ -9,6 +9,7 @@ builder.Services.AddSettings(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddSingleton<IMailService, SmtpMailService>();
+builder.Services.AddSingleton<IEmailTemplateService, EmailTemplateService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

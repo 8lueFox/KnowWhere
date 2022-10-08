@@ -16,9 +16,9 @@ public class MailController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<string>> SendMail(string to)
+    public async Task<ActionResult<string>> SendMail([FromBody] MailRequest request)
     {
-        await _mailService.SendAsync(null, new CancellationToken());
+        await _mailService.SendAsync(request, new CancellationToken());
 
         return Ok("Sended");
     }

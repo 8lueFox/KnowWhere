@@ -1,6 +1,11 @@
 ﻿//TAKE NOTE
 //This is only example file where I show how to create correct file 
 //You need to create "mail.json" file and there set correctly values
+
+//PRO TIP 
+//If you want send mail via Gmail and you have enabled Two Factor Authentication
+//You need to go to page https://myaccount.google.com/apppasswords and there generate your password and past here instead your real password.
+
 {
 	"MailSettings": {
 		"DisplayName": "8lueFox",

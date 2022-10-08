@@ -22,4 +22,10 @@
     <ProjectReference Include="..\KW.MailingService.Infrastructure\KW.MailingService.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Email Templates\email_confirmation.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
