@@ -1,7 +1,6 @@
 ﻿using KW.MailingService.Application;
 using MailKit.Net.Smtp;
 using MailKit.Security;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using MimeKit;
 
@@ -18,13 +17,19 @@ public class SmtpMailService : IMailService
         _emailTemplateService = emailTemplateService;
     }
 
+    public async Task SendAsync(RegistrationMailRequest request, CancellationToken ct)
+    {
+        request.MailRequest.Body = _emailTemplateService.GenerateEmailTemplate("email_confirmation", request.Model);
+        await SendAsync(request.MailRequest, ct);
+    }
+
     public async Task SendAsync(MailRequest request, CancellationToken ct)
     {
         try
         {
             var email = new MimeMessage();
 
-            email.From.Add(new MailboxAddress(_settings.DisplayName, request.From ?? _settings.From));
+            email.From.Add(new MailboxAddress(_settings.DisplayName, !string.IsNullOrEmpty(request.From) ? request.From : _settings.From));
 
             request.To.ForEach(to => email.To.Add(MailboxAddress.Parse(to)));
 
@@ -48,7 +53,7 @@ public class SmtpMailService : IMailService
             var builder = new BodyBuilder();
             email.Sender = new MailboxAddress(request.DisplayName ?? _settings.DisplayName, request.From ?? _settings.From);
             email.Subject = request.Subject;
-            builder.HtmlBody = _emailTemplateService.GenerateEmailTemplate(request.Body, new { });
+            builder.HtmlBody = request.Body;
 
             if(request.AttachmentData != null)
                 foreach(var attachmentData in request.AttachmentData)

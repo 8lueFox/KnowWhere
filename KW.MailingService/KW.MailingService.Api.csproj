@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="Configurations\mail.example.json" />
+    <Content Remove="Email Templates\email_confirmation.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +17,9 @@
 
   <ItemGroup>
     <None Include="Configurations\mail.example.json" />
+    <None Include="Email Templates\email_confirmation.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

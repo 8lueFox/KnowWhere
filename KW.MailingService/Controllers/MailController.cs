@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KW.MailingService.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
 public class MailController : ControllerBase
 {
@@ -17,6 +17,14 @@ public class MailController : ControllerBase
 
     [HttpPost]
     public async Task<ActionResult<string>> SendMail([FromBody] MailRequest request)
+    {
+        await _mailService.SendAsync(request, new CancellationToken());
+
+        return Ok("Sended");
+    }
+
+    [HttpPost(Name = "SendRegistarionMail")]
+    public async Task<ActionResult<string>> SendRegistrationMail([FromBody] RegistrationMailRequest request)
     {
         await _mailService.SendAsync(request, new CancellationToken());
 
