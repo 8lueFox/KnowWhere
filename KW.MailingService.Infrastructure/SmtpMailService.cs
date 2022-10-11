@@ -1,4 +1,5 @@
 ﻿using KW.MailingService.Application;
+using KW.Shared.MailingServiceModels;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Options;

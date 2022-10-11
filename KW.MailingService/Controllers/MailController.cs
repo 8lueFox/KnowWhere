@@ -1,4 +1,5 @@
 ﻿using KW.MailingService.Application;
+using KW.Shared.MailingServiceModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

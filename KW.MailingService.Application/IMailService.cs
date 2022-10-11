@@ -1,4 +1,6 @@
-﻿namespace KW.MailingService.Application;
+﻿using KW.Shared.MailingServiceModels;
+
+namespace KW.MailingService.Application;
 
 public interface IMailService
 {

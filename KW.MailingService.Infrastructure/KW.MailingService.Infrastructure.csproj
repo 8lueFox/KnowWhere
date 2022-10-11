@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KW.MailingService.Application\KW.MailingService.Application.csproj" />
+    <ProjectReference Include="..\KW.Shared\KW.Shared.csproj" />
   </ItemGroup>
 
 </Project>

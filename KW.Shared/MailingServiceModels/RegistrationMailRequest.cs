@@ -1,4 +1,4 @@
-﻿namespace KW.MailingService.Application;
+﻿namespace KW.Shared.MailingServiceModels;
 
 public class RegistrationMailRequest
 {

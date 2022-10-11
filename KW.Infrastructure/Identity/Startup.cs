@@ -1,4 +1,5 @@
 ﻿using KW.Infrastructure.Persistence.Context;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace KW.Infrastructure.Identity;
@@ -17,5 +18,6 @@ internal static class Startup
                 options.User.RequireUniqueEmail = false;
             })
         .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders()
         .Services;
 }

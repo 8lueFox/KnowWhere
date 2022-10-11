@@ -22,5 +22,11 @@ public class UsersController : BaseApiController
         return _userService.CreateAsync(request, GetOriginFromRequest());
     }
 
+    [HttpGet("confirm-email")]
+    public async Task<string> ConfirmEmailAsync([FromQuery] string userId, [FromQuery] string code, CancellationToken ct)
+    {
+        return await _userService.ConfirmEmailAsync(userId, code, ct);
+    }
+
     private string GetOriginFromRequest() => $"{Request.Scheme}://{Request.Host.Value}{Request.PathBase.Value}";
 }

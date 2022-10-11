@@ -11,4 +11,7 @@ public interface IUserService : ITransientService
 
     Task<string> CreateAsync(CreateUserRequest request, string origin);
     Task UpdateAsync(UpdateUserRequest request, string userId);
+
+    Task<string> ConfirmEmailAsync(string userId, string code, CancellationToken cancellationToken);
+    Task<string> ConfirmPhoneNumberAsync(string userId, string code);
 }
