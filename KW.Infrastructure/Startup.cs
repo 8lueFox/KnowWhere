@@ -1,4 +1,5 @@
 ﻿using KW.Infrastructure.Auth;
+using KW.Infrastructure.BackgroundJobs;
 using KW.Infrastructure.Common;
 using KW.Infrastructure.Persistence;
 using MediatR;
@@ -15,8 +16,13 @@ public static class Startup
     {
         return services
             .AddAuth(config)
+            .AddBackgroundJobs(config)
             .AddMediatR(Assembly.GetExecutingAssembly())
             .AddPersistence(config)
             .AddServices();
     }
+
+    public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder builder, IConfiguration config) =>
+        builder
+            .UseHangfireDashboard(config);
 }

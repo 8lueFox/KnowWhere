@@ -15,10 +15,12 @@ namespace KW.Infrastructure.Identity;
 public partial class UserService : IUserService
 {
     private readonly UserManager<ApplicationUser> _userManager;
+    private readonly IJobService _jobService;
 
-    public UserService(UserManager<ApplicationUser> userManager)
+    public UserService(UserManager<ApplicationUser> userManager, IJobService jobService)
     {
         _userManager = userManager;
+        _jobService = jobService;
     }
 
     public async Task<UserDetailsDto> GetAsync(string userId, CancellationToken cancellationToken)
@@ -69,13 +71,17 @@ public partial class UserService : IUserService
             }
         };
 
-        var json = JsonConvert.SerializeObject(emailModel);
-        var data = new StringContent(json, Encoding.UTF8, "application/json");
-        var url = "https://localhost:9001/api/Mail/SendRegistrationMail";
+        //var json = JsonConvert.SerializeObject(emailModel);
+        //var data = new StringContent(json, Encoding.UTF8, "application/json");
+        //var url = "https://localhost:9001/api/Mail/SendRegistrationMail";
 
-        using var client = new HttpClient();
-        await client.PostAsync(url, data);
-        messages.Add("Email sended.");
+
+
+        //using var client = new HttpClient();
+        //await client.PostAsync(url, data);
+        //messages.Add("Email sended.");
+
+        _jobService.Enqueue(() => SendRegistrationEmail(emailModel));
 
         return string.Join(Environment.NewLine, messages);
     }
@@ -93,5 +99,15 @@ public partial class UserService : IUserService
     public async Task<bool> ExistsWithNameAsync(string name)
     {
         return await _userManager.FindByNameAsync(name) is not null;
+    }
+
+    public async Task SendRegistrationEmail(RegistrationMailRequest request)
+    {
+        var json = JsonConvert.SerializeObject(request);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+        var url = "https://localhost:9001/api/Mail/SendRegistrationMail";
+
+        using var client = new HttpClient();
+        await client.PostAsync(url, data);
     }
 }
