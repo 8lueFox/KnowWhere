@@ -26,11 +26,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.Api", "KW.Api\KW.Api.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MailingService", "MailingService", "{D654BD29-EEA3-4EE8-8786-189694A42B48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.MailingService.Api", "KW.MailingService\KW.MailingService.Api.csproj", "{A6FAF91B-B6DB-4BFC-B40B-B74AA54F83DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.MailingService.Api", "KW.MailingService\KW.MailingService.Api.csproj", "{A6FAF91B-B6DB-4BFC-B40B-B74AA54F83DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.MailingService.Application", "KW.MailingService.Application\KW.MailingService.Application.csproj", "{BAA5617B-0145-4C88-BE08-99D46381BDB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.MailingService.Application", "KW.MailingService.Application\KW.MailingService.Application.csproj", "{BAA5617B-0145-4C88-BE08-99D46381BDB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.MailingService.Infrastructure", "KW.MailingService.Infrastructure\KW.MailingService.Infrastructure.csproj", "{D484E1C8-F4DC-4075-8352-171C0E524A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.MailingService.Infrastructure", "KW.MailingService.Infrastructure\KW.MailingService.Infrastructure.csproj", "{D484E1C8-F4DC-4075-8352-171C0E524A8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileStorageService", "FileStorageService", "{AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.FS.Application", "KW.FS.Application\KW.FS.Application.csproj", "{01F851DE-0A56-445E-87E1-C5EC7C49ACBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.FS.Infrastructure", "KW.FS.Infrastructure\KW.FS.Infrastructure.csproj", "{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.FS.Api", "KW.FS.Api\KW.FS.Api.csproj", "{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +78,18 @@ Global
 		{D484E1C8-F4DC-4075-8352-171C0E524A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D484E1C8-F4DC-4075-8352-171C0E524A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D484E1C8-F4DC-4075-8352-171C0E524A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F851DE-0A56-445E-87E1-C5EC7C49ACBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F851DE-0A56-445E-87E1-C5EC7C49ACBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F851DE-0A56-445E-87E1-C5EC7C49ACBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F851DE-0A56-445E-87E1-C5EC7C49ACBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +105,10 @@ Global
 		{A6FAF91B-B6DB-4BFC-B40B-B74AA54F83DF} = {D654BD29-EEA3-4EE8-8786-189694A42B48}
 		{BAA5617B-0145-4C88-BE08-99D46381BDB4} = {D654BD29-EEA3-4EE8-8786-189694A42B48}
 		{D484E1C8-F4DC-4075-8352-171C0E524A8F} = {D654BD29-EEA3-4EE8-8786-189694A42B48}
+		{AEE3A3CC-A126-43CB-9097-0B1B4CA814B4} = {D6341FF7-1D5F-449F-8168-B96035921FBA}
+		{01F851DE-0A56-445E-87E1-C5EC7C49ACBE} = {AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}
+		{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18} = {AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}
+		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311} = {AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA2EFB71-EFE1-46F8-94C7-AE963AE13755}
