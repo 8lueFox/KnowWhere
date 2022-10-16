@@ -5,7 +5,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <AppBar position='static' style={{backgroundColor: '#2c2c2c'}}>
+        <AppBar position='fixed' style={{backgroundColor: '#2c2c2c'}}>
             <Container maxWidth='x1'>
                 <Toolbar disableGutters>
                     <Typography

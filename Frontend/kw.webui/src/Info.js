@@ -1,12 +1,12 @@
-import { Card, Typography } from "@mui/material";
+import { Button, Card, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import './Info.css';
 
 const Info = () => {
     return (
-        <span>
+        <span style={{paddingBottom: '2em'}}>
         <Container maxWidth='md'>
-            <Card style={{marginTop: '1em'}} maxWidth='sm'>
+            <Card style={{marginTop: '5em', marginBottom: '1em'}} maxWidth='sm'>
                 <Typography
                     variant="h5"
                     noWrap
@@ -35,10 +35,39 @@ const Info = () => {
                 </Typography>
             </Card>
         </Container>
-        <Container maxWidth='xl' style={{marginTop: '2em'}}>
-            <Card>
-                Actually online drivers: 10000
-                Actually reported accidents: 5
+        <Container maxWidth="xl" id='statsInfo'>
+            <Card id='statsInfoHeader'>
+                <Typography
+                    variant="h4"
+                    color={'rgb(226, 226, 226)'}
+                    paddingTop={'1em'}
+                    fontWeight={'700'}
+                    >
+                    Actually:
+                </Typography>
+            </Card>
+            <Card id='statsInfoActualls'>
+                <span className="stat">
+                    <h1>Online drivers:</h1>
+                    <p>5000</p>
+                </span>
+                <span className="stat">
+                    <h1>Reported accidents:</h1>
+                    <p>9923</p>
+                </span>
+                <span className="stat">
+                    <h1>Reported police checks:</h1>
+                    <p>1204</p>
+                </span>
+                <span className="stat">
+                    <h1>Reported speed cameras:</h1>
+                    <p>923232</p>
+                </span>
+            </Card>
+            <Card id="statsInfoButton">
+                <Button variant="contained" color="error">
+                    Navigate now
+                </Button>
             </Card>
         </Container>
         </span>
