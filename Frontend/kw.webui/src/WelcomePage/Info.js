@@ -1,12 +1,13 @@
 import { Button, Card, Typography } from "@mui/material";
 import { Container } from "@mui/system";
+import { Link } from "react-router-dom";
 import './Info.css';
 
 const Info = () => {
     return (
         <span style={{paddingBottom: '2em'}}>
         <Container maxWidth='md'>
-            <Card style={{marginTop: '5em', marginBottom: '1em'}} maxWidth='sm'>
+            <Card style={{marginTop: '5em', marginBottom: '1em', textAlign: 'center'}} maxWidth='sm'>
                 <Typography
                     variant="h5"
                     noWrap
@@ -65,9 +66,11 @@ const Info = () => {
                 </span>
             </Card>
             <Card id="statsInfoButton">
-                <Button variant="contained" color="error">
-                    Navigate now
-                </Button>
+                <Link to="/map">
+                    <Button variant="contained" color="error">
+                        Navigate now
+                    </Button>
+                </Link>
             </Card>
         </Container>
         </span>

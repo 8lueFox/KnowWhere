@@ -1,15 +1,17 @@
-import './App.css';
-import Header from './Header';
-import Info from './Info';
-import Footer from './Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MapLayout from './Map/MapLayout';
+import WelcomePage from './WelcomePage/Welcome'
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Info />
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route>
+          <Route index element={<WelcomePage />} />
+          <Route path='/map' element={<MapLayout />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
