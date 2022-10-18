@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+#statsInfo{
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://www.local-transport-projects.co.uk/wp-content/uploads/2020/03/Speed_LTP.jpg');
+    background-color: #cccccc;
+    background-size: cover;
+    height: 500px;
+    font-family: 'Poppins, sans-serif';
+}
+
+#statsInfoHeader{
+    background-color: transparent !important;
+    display: flex;
+    justify-content: center;
+    box-shadow: none !important;
+}
+
+#statsInfoActualls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent !important;   
+    color: white;
+    padding-top: 3em;
+    box-shadow: none !important;
+}
+
+#statsInfoButton{
+    padding-top: 5em;
+    background-color: transparent !important;
+    display: flex;
+    justify-content: center;
+    box-shadow: none !important;
+}
+
+.stat h1{
+    color:rgb(255, 0, 0);
+    font-size: 20px !important;
+}
+
+.stat p{
+    color: rgb(226, 226, 226);
+    font-size: 32px;
+    text-shadow: 5px 5px 10px red;
+}
+/* #statsInfo{
+    margin-top: 2em;
+    background-image: url('https://www.local-transport-projects.co.uk/wp-content/uploads/2020/03/Speed_LTP.jpg');
+    background-color: #cccccc;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    font-family: 'Poppins, sans-serif';
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.stat{
+    background-color: rgba(226, 226, 226, 0.1) !important;
+    color: rgb(226, 226, 226) !important;
+    height: 10em;
+} */

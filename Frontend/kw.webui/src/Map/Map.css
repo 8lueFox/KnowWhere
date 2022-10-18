@@ -1,0 +1,24 @@
+#MapLayout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#SearchPanel{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-right: 1px solid black;
+    height: 100%;
+}
+
+#Map{
+    width: 70%;
+    height: 100%;
+    min-height: 300px;
+}
+
+#Map .leaflet-container{
+    min-height: 100%;
+    height: 300px;
+}

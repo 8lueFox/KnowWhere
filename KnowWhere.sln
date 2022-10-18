@@ -34,11 +34,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.MailingService.Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileStorageService", "FileStorageService", "{AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.FS.Application", "KW.FS.Application\KW.FS.Application.csproj", "{01F851DE-0A56-445E-87E1-C5EC7C49ACBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.FS.Application", "KW.FS.Application\KW.FS.Application.csproj", "{01F851DE-0A56-445E-87E1-C5EC7C49ACBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.FS.Infrastructure", "KW.FS.Infrastructure\KW.FS.Infrastructure.csproj", "{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.FS.Infrastructure", "KW.FS.Infrastructure\KW.FS.Infrastructure.csproj", "{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.FS.Api", "KW.FS.Api\KW.FS.Api.csproj", "{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.FS.Api", "KW.FS.Api\KW.FS.Api.csproj", "{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
