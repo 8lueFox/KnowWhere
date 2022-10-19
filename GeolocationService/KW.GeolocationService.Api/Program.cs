@@ -1,6 +1,13 @@
+using KW.GeolocationService.Api.Configurations;
+using KW.GeolocationService.Application;
+using KW.GeolocationService.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Host.AddConfiguration();
+builder.Services.AddSettings(builder.Configuration);
+
+builder.Services.AddTransient<IHooperService, HooperService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

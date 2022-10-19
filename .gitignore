@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /KW.MailingService/Configurations/mail.json
+/GeolocationService/KW.GeolocationService.Api/Configurations/graphhopper.json

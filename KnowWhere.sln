@@ -40,6 +40,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.FS.Infrastructure", "KW.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KW.FS.Api", "KW.FS.Api\KW.FS.Api.csproj", "{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeolocationService", "GeolocationService", "{344165CF-A4D2-4C97-9DE6-652488C39439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.GeolocationService.Api", "GeolocationService\KW.GeolocationService.Api\KW.GeolocationService.Api.csproj", "{C5A9DE9F-6324-4386-9677-D676D4D49CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.GeolocationService.Application", "GeolocationService\KW.GeolocationService.Application\KW.GeolocationService.Application.csproj", "{A6A2C873-7557-43CB-A1EE-A6714DC44324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KW.GeolocationService.Infrastructure", "GeolocationService\KW.GeolocationService.Infrastructure\KW.GeolocationService.Infrastructure.csproj", "{66E24A04-72A3-490B-B861-75504BABA5F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +98,18 @@ Global
 		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A9DE9F-6324-4386-9677-D676D4D49CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A9DE9F-6324-4386-9677-D676D4D49CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A9DE9F-6324-4386-9677-D676D4D49CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A9DE9F-6324-4386-9677-D676D4D49CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A2C873-7557-43CB-A1EE-A6714DC44324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A2C873-7557-43CB-A1EE-A6714DC44324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A2C873-7557-43CB-A1EE-A6714DC44324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A2C873-7557-43CB-A1EE-A6714DC44324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E24A04-72A3-490B-B861-75504BABA5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E24A04-72A3-490B-B861-75504BABA5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E24A04-72A3-490B-B861-75504BABA5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E24A04-72A3-490B-B861-75504BABA5F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +129,10 @@ Global
 		{01F851DE-0A56-445E-87E1-C5EC7C49ACBE} = {AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}
 		{4AAC47D4-7AD1-40EB-8B6D-CBEE3963AF18} = {AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}
 		{74F6E9F2-4CDD-4CE4-A867-854F1CAD7311} = {AEE3A3CC-A126-43CB-9097-0B1B4CA814B4}
+		{344165CF-A4D2-4C97-9DE6-652488C39439} = {D6341FF7-1D5F-449F-8168-B96035921FBA}
+		{C5A9DE9F-6324-4386-9677-D676D4D49CC3} = {344165CF-A4D2-4C97-9DE6-652488C39439}
+		{A6A2C873-7557-43CB-A1EE-A6714DC44324} = {344165CF-A4D2-4C97-9DE6-652488C39439}
+		{66E24A04-72A3-490B-B861-75504BABA5F4} = {344165CF-A4D2-4C97-9DE6-652488C39439}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA2EFB71-EFE1-46F8-94C7-AE963AE13755}

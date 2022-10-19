@@ -1,0 +1,9 @@
+﻿//TAKE NOTE
+//This is only example file where I show how to create correct file 
+//You need to create "graphhopper.json" file and there set correctly values
+
+{
+  "HooperSettings": {
+    "Key": "999888xd-1111-2222-3333-111111111111"
+  }
+}
