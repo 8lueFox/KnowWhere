@@ -11,7 +11,7 @@ public class RouteDto
     public Info Info { get; set; }
 
     [JsonPropertyName("paths")]
-    public Paths Paths { get; set; }
+    public Paths[] Paths { get; set; }
 }
 
 public class Hints
@@ -50,7 +50,7 @@ public class Paths
     public bool PointsEncoded { get; set; }
 
     [JsonPropertyName("bbox")]
-    public int[] Bbox { get; set; }
+    public double[] Bbox { get; set; }
 
     [JsonPropertyName("points")]
     public Points Points { get; set; }

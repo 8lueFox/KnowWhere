@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace KW.GeolocationService.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class GeolocationController : ControllerBase
     {
@@ -21,7 +21,15 @@ namespace KW.GeolocationService.Api.Controllers
         {
             var response = await _hooperService.GetRoute(request);
 
-            return Ok("Sended");
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<RouteDto>> GetGeocoding([FromBody] GetGeocode request)
+        {
+            var response = await _hooperService.GetGeocoding(request);
+
+            return Ok(response);
         }
     }
 }

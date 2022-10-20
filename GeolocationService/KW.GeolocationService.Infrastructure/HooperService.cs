@@ -1,6 +1,7 @@
 ﻿using KW.GeolocationService.Application;
 using KW.GeolocationService.Application.Requests;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace KW.GeolocationService.Infrastructure;
 
@@ -29,8 +30,29 @@ public class HooperService : IHooperService
 
         response.EnsureSuccessStatusCode();
 
-        var contentStram = await response.Content.ReadAsStreamAsync();
-        return await System.Text.Json.JsonSerializer.DeserializeAsync<RouteDto>(contentStram);
+        var contentString = await response.Content.ReadAsStringAsync();
+        var obj = JsonConvert.DeserializeObject<RouteDto>(contentString);
+        return obj;
+    }
+
+    public async Task<GeocodingDto> GetGeocoding(GetGeocode request)
+    {
+        //https://graphhopper.com/api/1/geocode?q=LondonDerry Victoria Road
+
+        var url = "https://graphhopper.com/api/1/geocode?"
+            + $"q={request.Query}"
+            + $"&key={_settings.Key}";
+
+        Console.WriteLine(url);
+
+        using var client = new HttpClient();
+        var response = await client.GetAsync(url);
+
+        response.EnsureSuccessStatusCode();
+
+        var contentString = await response.Content.ReadAsStringAsync();
+        var obj = JsonConvert.DeserializeObject<GeocodingDto>(contentString);
+        return obj;
     }
 }
 
