@@ -5,8 +5,9 @@ import './Map.css';
 const MapLayout = () => {
     return(
         <span id='MapLayout'>
-            <SearchPanel />
             <Map />
+            <SearchPanel />
+            
         </span>
     )
 }
