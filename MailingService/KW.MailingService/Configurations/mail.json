@@ -1,0 +1,18 @@
+﻿{
+  //"MailSettings": {
+  //  "DisplayName": "8lueFox",
+  //  "From": "kacper.jedrzejewskiaka@gmail.com",
+  //  "Host": "smtp.gmail.com",
+  //  "Password": "groo8Y6tY",
+  //  "Port": 587,
+  //  "UserName": "kacper.jedrzejewskiaka@gmail.com"
+  //}
+  "MailSettings": {
+    "DisplayName": "KnowWhere",
+    "From": "kacper.jedrzejewskiaka@gmail.com",
+    "Host": "smtp.gmail.com",
+    "Password": "aptyefzxogrrfpgj",
+    "Port": 587,
+    "UserName": "kacper.jedrzejewskiaka@gmail.com"
+  }
+}

@@ -1,29 +1,21 @@
-using KW.GeolocationService.Api.Configurations;
-using KW.GeolocationService.Application;
-using KW.GeolocationService.Infrastructure;
+using KW.MailingService.Api.Configurations;
+using KW.MailingService.Application;
+using KW.MailingService.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.AddConfiguration();
 builder.Services.AddSettings(builder.Configuration);
 
-builder.Services.AddCors(opt =>
-    opt.AddPolicy("CorsPolicy", policy =>
-        policy.AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials()
-            .WithOrigins("http://localhost:3000")));
-
-builder.Services.AddTransient<IHooperService, HooperService>();
-
+// Add services to the container.
+builder.Services.AddSingleton<IMailService, SmtpMailService>();
+builder.Services.AddSingleton<IEmailTemplateService, EmailTemplateService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
-app.UseCors("CorsPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -12,7 +12,6 @@ const initialState = {
 export const fetchSuggestions = createAsyncThunk(
     'map/fetchSuggestions',
     async(input) => {
-        console.log('fetching')
         const response = await fetchSuggs(input);
         return response.data;
     }
@@ -37,7 +36,7 @@ const MapSlice = createSlice({
             })
             .addCase(fetchSuggestions.fulfilled, (state, action) => {
                 state.fetchingSuggestionsStatus = 'idle'
-                state.inputSuggestions = action.payload
+                state.inputSuggestions = action.payload.hits
             })
     }
 })

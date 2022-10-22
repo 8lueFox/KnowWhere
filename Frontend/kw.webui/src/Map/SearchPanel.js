@@ -15,9 +15,13 @@ const SearchPanel = () => {
     const [isSearchDestinationOn, setIsSearchDestinationOn] = useState(false)
 
     const setPoint = (id) => {
-        console.log('setPoint ' + id)
-        setPointFromObject(inputSuggestions[id])
-        setPointFrom(inputSuggestions[id].city + ', ' + inputSuggestions[id].country)
+        if(isSearchDestinationOn){
+            setPointToObject(inputSuggestions[id])
+            setPointTo(inputSuggestions[id].name + ', ' + inputSuggestions[id].country)
+        }else{
+            setPointFromObject(inputSuggestions[id])
+            setPointFrom(inputSuggestions[id].name + ', ' + inputSuggestions[id].country)
+        }
         dispatch(clearSuggestions())
     }
 
@@ -33,7 +37,7 @@ const SearchPanel = () => {
                 value={pointFrom}
                 onChange={(event) => setPointFrom(event.target.value)}
                 />
-            <IconButton type='button' sx={{p:'10px'}} aria-label='search' onClick={() => dispatch(fetchSuggestions(''))}>
+            <IconButton type='button' sx={{p:'10px'}} aria-label='search' onClick={() => dispatch(fetchSuggestions(pointFrom))}>
                 <Search />
             </IconButton>
             <Divider sx={{height: 28, m: 0.5}} orientation='vertical'/>
@@ -52,8 +56,9 @@ const SearchPanel = () => {
                 placeholder="Search for a destination"
                 inputProps={{ 'aria-label': 'search for a destination'}}
                 value={pointTo}
+                onChange={(event) => setPointTo(event.target.value)}
                 />
-            <IconButton type='button' sx={{p:'10px'}} aria-label='search' onClick={() => dispatch(fetchSuggestions(''))}>
+            <IconButton type='button' sx={{p:'10px'}} aria-label='search' onClick={() => dispatch(fetchSuggestions(pointTo))}>
                 <Search />
             </IconButton>
         </Paper>}
@@ -69,13 +74,13 @@ const SearchPanel = () => {
                     className="cityName"
                     sx={{p: '12px', pr: 0, fontFamily: 'Poppins, sans-serif',
                     fontWeight: 500, fontSize: 14}} >
-                    {point.city}
+                    {point.street == null ? point.name : (point.housenumber + " " + point.street)}
                 </Typography>
                 <Typography
                     className="countryName"
                     sx={{p: '14.5px', pl:1, fontFamily: 'Poppins, sans-serif',
                     fontWeight: 500, fontSize: 12}} >
-                    {point.country}
+                    {point.street == null ? point.country : point.city}
                 </Typography>
             </Card>
             })}
