@@ -21,7 +21,7 @@ const MapSlice = createSlice({
     name: 'map',
     initialState,
     reducers:{
-        setPointFrom : (state, action) => {
+        setGlobalPointFrom : (state, action) => {
             state.pointFrom = action.payload
         },
         clearSuggestions: (state) => {
@@ -41,8 +41,9 @@ const MapSlice = createSlice({
     }
 })
 
-export const { setPointFrom, clearSuggestions } = MapSlice.actions
+export const { setGlobalPointFrom, clearSuggestions } = MapSlice.actions
 
 export const selectInputSuggestions = (state) => state.map.inputSuggestions;
+export const selectPointFrom = (state) => state.map.pointFrom;
 
 export default MapSlice.reducer;

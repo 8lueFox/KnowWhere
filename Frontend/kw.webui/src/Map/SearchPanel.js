@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { AccountCircle, Cancel, Directions, Search } from "@mui/icons-material";
-import { Autocomplete, Card, Divider, Icon, IconButton, InputBase, Paper, TextField, Tooltip, Typography } from "@mui/material";
-import { clearSuggestions, fetchSuggestions, selectInputSuggestions } from './MapSlice';
+import { Cancel, Directions, Search } from "@mui/icons-material";
+import { Card, Divider, Icon, IconButton, InputBase, Paper, TextField, Tooltip, Typography } from "@mui/material";
+import { setGlobalPointFrom, clearSuggestions, fetchSuggestions, selectInputSuggestions } from './MapSlice';
 
 const SearchPanel = () => {
     const inputSuggestions = useSelector(selectInputSuggestions);
@@ -21,21 +21,28 @@ const SearchPanel = () => {
         }else{
             setPointFromObject(inputSuggestions[id])
             setPointFrom(inputSuggestions[id].name + ', ' + inputSuggestions[id].country)
+            dispatch(setGlobalPointFrom(inputSuggestions[id]))
         }
         dispatch(clearSuggestions())
     }
 
+    const setPointFromAndSearch = (input) => {
+        setPointFrom(input)
+        if(input.length > 3)
+        dispatch(fetchSuggestions(pointFrom))
+    }
+
     return(
     <span id='SearchPanel'>
-        <Paper 
-            component="form"
+        <Paper
             sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400}}>
             <InputBase
                 sx={{ml: 1, flex: 1}}
                 placeholder="Search place"
                 inputProps={{ 'aria-label': 'search place'}}
                 value={pointFrom}
-                onChange={(event) => setPointFrom(event.target.value)}
+                onChange={(event) => setPointFromAndSearch(event.target.value)}
+                onSubmit={e => { console.log('submit') }}
                 />
             <IconButton type='button' sx={{p:'10px'}} aria-label='search' onClick={() => dispatch(fetchSuggestions(pointFrom))}>
                 <Search />

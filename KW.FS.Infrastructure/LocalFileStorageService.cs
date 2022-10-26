@@ -18,6 +18,8 @@ public class LocalFileStorageService : IFileStorageService
             throw new InvalidOperationException("Name is required.");
 
         string base64Data = Regex.Match(request.Data, "data:image/(?<type>.+?),(?<data>.+)").Groups["data"].Value;
+
+        return null;
     }
 
     public void Remove(string? path)
